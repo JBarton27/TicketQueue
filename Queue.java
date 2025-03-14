@@ -11,46 +11,45 @@ public class Queue {
 class Node {
 	String value;
 	Node next;
-	
 	Node(String value) {
-		this.value = value;
+	 this.value = value;
 	}
 }
 
 public Queue(String value) {
-		Node newNode = new Node(value);
-		first = newNode;
-		last = newNode;
-		length ++;
+	Node newNode = new Node(value);
+	first = newNode;
+	last = newNode;
+	length ++;
 }
 
 public void createTicket(String value) {
 	Node newNode = new Node(value);
-	
 	if(length == 0) {
-		first = newNode;
-		last = newNode;
+	first = newNode;
+	last = newNode;
 	}
 	else {
-		last.next = newNode;
-		last = newNode;
+	last.next = newNode;
+	last = newNode;
 	}
-	
 	length++;
 }
 
 public String removeTicket() {
 	if(length == 0) {
-		return null;
+	return null;
 	}
 	Node temp = first;
+	
 	if(length == 1) {
-		first = null;
-		last = null;
+	first = null;
+	last = null;
 	}
+	
 	else {
-		first = first.next;
-		temp.next = null;
+	first = first.next;
+	temp.next = null;
 	}
 	
 	length --;
@@ -83,10 +82,9 @@ public void getLength() {
 			if(temp.value.equals(issueDescription)) {
 				System.out.println("Your position in the Queue is " + i);
                 return i; // Return the position when found
-			} 
-			
-			temp = temp.next;
-			i++;
+		} 	
+		temp = temp.next;
+		i++;
 		}
 		// If the loop ends without finding the value
         System.out.println("The issue is not found in the queue.");
